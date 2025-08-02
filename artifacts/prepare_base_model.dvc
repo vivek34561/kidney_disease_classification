@@ -1,0 +1,6 @@
+outs:
+- md5: 74ddfeda7ca2b7eab2c413799aa3977e.dir
+  size: 118073512
+  nfiles: 2
+  hash: md5
+  path: prepare_base_model

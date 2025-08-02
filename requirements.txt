@@ -18,3 +18,4 @@ Flask-Cors
 gdown
 # -e .
 dvc
+ipykernel
