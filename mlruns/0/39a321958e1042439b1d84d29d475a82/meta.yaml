@@ -1,0 +1,14 @@
+artifact_uri: file:///C:/Users/vivek%20gupta/Desktop/Kidney_Disease_CLassification/mlruns/0/39a321958e1042439b1d84d29d475a82/artifacts
+end_time: 1754211749687
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 39a321958e1042439b1d84d29d475a82
+run_name: clumsy-trout-986
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1754211738101
+status: 3
+tags: []
+user_id: vivek34561

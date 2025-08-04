@@ -1,0 +1,14 @@
+artifact_uri: file:///C:/Users/vivek%20gupta/Desktop/Kidney_Disease_CLassification/mlruns/0/2101996e12b042f8badfbfbce1cca1ff/artifacts
+end_time: 1754289485636
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 2101996e12b042f8badfbfbce1cca1ff
+run_name: placid-panda-777
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1754289476616
+status: 3
+tags: []
+user_id: vivek gupta

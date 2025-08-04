@@ -1,0 +1,14 @@
+artifact_uri: file:///C:/Users/vivek%20gupta/Desktop/Kidney_Disease_CLassification/mlruns/0/0555c6fa21174ccbbff60b88fe91d0b4/artifacts
+end_time: 1754282021789
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 0555c6fa21174ccbbff60b88fe91d0b4
+run_name: enchanting-moose-483
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1754282008182
+status: 3
+tags: []
+user_id: vivek gupta

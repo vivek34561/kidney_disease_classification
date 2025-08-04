@@ -25,21 +25,16 @@ class PrepareBaseModel:
     def _prepare_full_model(model, classes, freeze_all, freeze_till, learning_rate):
         if freeze_all:
             for layer in model.layers:
-                model.trainable = False
+                layer.trainable = False
         elif (freeze_till is not None) and (freeze_till > 0):
             for layer in model.layers[:-freeze_till]:
-                model.trainable = False
+                layer.trainable = False
 
-        flatten_in = tf.keras.layers.Flatten()(model.output)
-        prediction = tf.keras.layers.Dense(
-            units=classes,
-            activation="softmax"
-        )(flatten_in)
+        x = tf.keras.layers.Flatten()(model.output)
+        x = tf.keras.layers.Dropout(0.5)(x)  # Optional regularization
+        prediction = tf.keras.layers.Dense(units=classes, activation="softmax")(x)
 
-        full_model = tf.keras.models.Model(
-            inputs=model.input,
-            outputs=prediction
-        )
+        full_model = tf.keras.models.Model(inputs=model.input, outputs=prediction)
 
         full_model.compile(
             optimizer=tf.keras.optimizers.SGD(learning_rate=learning_rate),
@@ -49,6 +44,7 @@ class PrepareBaseModel:
 
         full_model.summary()
         return full_model
+
     
     
     def update_base_model(self):

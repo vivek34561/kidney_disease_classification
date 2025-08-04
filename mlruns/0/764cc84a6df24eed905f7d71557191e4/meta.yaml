@@ -1,0 +1,14 @@
+artifact_uri: file:///C:/Users/vivek%20gupta/Desktop/Kidney_Disease_CLassification/mlruns/0/764cc84a6df24eed905f7d71557191e4/artifacts
+end_time: 1754202179863
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 764cc84a6df24eed905f7d71557191e4
+run_name: secretive-sloth-627
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1754202164311
+status: 3
+tags: []
+user_id: vivek34561

@@ -1,0 +1,14 @@
+artifact_uri: file:///C:/Users/vivek%20gupta/Desktop/Kidney_Disease_CLassification/mlruns/0/a2e43c9a102648028fe1eed2f3f50cb3/artifacts
+end_time: 1754286038195
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: a2e43c9a102648028fe1eed2f3f50cb3
+run_name: smiling-slug-881
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1754286029427
+status: 3
+tags: []
+user_id: vivek gupta

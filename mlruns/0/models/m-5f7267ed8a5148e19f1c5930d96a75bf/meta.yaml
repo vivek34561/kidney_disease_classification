@@ -1,0 +1,10 @@
+artifact_location: file:///C:/Users/vivek%20gupta/Desktop/Kidney_Disease_CLassification/mlruns/0/models/m-5f7267ed8a5148e19f1c5930d96a75bf/artifacts
+creation_timestamp: 1754211738210
+experiment_id: '0'
+last_updated_timestamp: 1754211749665
+model_id: m-5f7267ed8a5148e19f1c5930d96a75bf
+model_type: null
+name: model
+source_run_id: 39a321958e1042439b1d84d29d475a82
+status: 2
+status_message: null

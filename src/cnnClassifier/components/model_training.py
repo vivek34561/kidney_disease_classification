@@ -1,15 +1,7 @@
-import os
-import urllib.request as request
-from zipfile import ZipFile
 import tensorflow as tf
-import time
+from pathlib import Path
 from cnnClassifier.entity.config_entity import TrainingConfig
-from pathlib import Path
-
-
-import tensorflow as tf
-from pathlib import Path
-
+import multiprocessing
 class Training:
     def __init__(self, config: TrainingConfig):
         self.config = config
@@ -20,10 +12,10 @@ class Training:
         )
         
         self.model.compile(
-        optimizer=tf.keras.optimizers.Adam(),
-        loss='categorical_crossentropy',   # or 'binary_crossentropy' based on your labels
-        metrics=['accuracy']
-        )    
+            optimizer=tf.keras.optimizers.Adam(learning_rate=self.config.params_learning_rate),
+            loss='categorical_crossentropy',
+            metrics=['accuracy']
+        )
 
     def train_valid_generator(self):
         datagenerator_kwargs = dict(
@@ -35,6 +27,7 @@ class Training:
             target_size=self.config.params_image_size[:-1],
             batch_size=self.config.params_batch_size,
             interpolation="bilinear"
+            
         )
 
         valid_datagenerator = tf.keras.preprocessing.image.ImageDataGenerator(
@@ -45,6 +38,7 @@ class Training:
             directory=self.config.training_data,
             subset="validation",
             shuffle=False,
+            class_mode='categorical' ,
             **dataflow_kwargs
         )
 
@@ -65,25 +59,25 @@ class Training:
             directory=self.config.training_data,
             subset="training",
             shuffle=True,
+            class_mode='categorical' ,
             **dataflow_kwargs
         )
+        print("Classes:", self.train_generator.class_indices)
+        print("Train samples:", self.train_generator.samples)
+        print("Validation samples:", self.valid_generator.samples)
 
-    @staticmethod
-    def save_model(path: Path, model: tf.keras.Model):
-        model.save(path)
-
-    # ✅ THIS IS THE CRITICAL FIX
-    @tf.function
     def _fit_model(self):
         self.model.fit(
             self.train_generator,
             epochs=self.config.params_epochs,
             steps_per_epoch=self.steps_per_epoch,
             validation_steps=self.validation_steps,
-            validation_data=self.valid_generator
+            validation_data=self.valid_generator,
+          
         )
 
     def train(self):
+        
         self.steps_per_epoch = self.train_generator.samples // self.train_generator.batch_size
         self.validation_steps = self.valid_generator.samples // self.valid_generator.batch_size
 
@@ -93,3 +87,7 @@ class Training:
             path=self.config.trained_model_path,
             model=self.model
         )
+
+    @staticmethod
+    def save_model(path: Path, model: tf.keras.Model):
+        model.save(path)

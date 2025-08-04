@@ -1,0 +1,14 @@
+artifact_uri: file:///C:/Users/vivek%20gupta/Desktop/Kidney_Disease_CLassification/mlruns/0/9d68e652b97544be98bf4e8b5253aba1/artifacts
+end_time: 1754203697079
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 9d68e652b97544be98bf4e8b5253aba1
+run_name: useful-duck-676
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1754203687790
+status: 3
+tags: []
+user_id: vivek34561

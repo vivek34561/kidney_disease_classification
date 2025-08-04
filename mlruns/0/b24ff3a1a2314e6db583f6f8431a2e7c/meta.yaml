@@ -1,0 +1,14 @@
+artifact_uri: file:///C:/Users/vivek%20gupta/Desktop/Kidney_Disease_CLassification/mlruns/0/b24ff3a1a2314e6db583f6f8431a2e7c/artifacts
+end_time: 1754212666502
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: b24ff3a1a2314e6db583f6f8431a2e7c
+run_name: charming-yak-828
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1754212656701
+status: 3
+tags: []
+user_id: vivek34561
