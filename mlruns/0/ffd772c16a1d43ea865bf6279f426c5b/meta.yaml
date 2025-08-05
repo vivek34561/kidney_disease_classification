@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/vivek%20gupta/Desktop/Kidney_Disease_CLassification/mlruns/0/ffd772c16a1d43ea865bf6279f426c5b/artifacts
+end_time: 1754377515519
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: ffd772c16a1d43ea865bf6279f426c5b
+run_name: fun-fish-472
+run_uuid: ffd772c16a1d43ea865bf6279f426c5b
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1754377505004
+status: 3
+tags: []
+user_id: vivek gupta

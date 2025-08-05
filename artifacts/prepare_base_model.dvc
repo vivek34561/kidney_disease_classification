@@ -1,6 +1,6 @@
 outs:
-- md5: aae3d0d12722a620ee3128e57c445ce6.dir
-  size: 118075632
+- md5: cc94ed504eafa6a96db81c505de0b61a.dir
+  size: 118055440
   nfiles: 2
   hash: md5
   path: prepare_base_model

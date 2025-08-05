@@ -1,0 +1,14 @@
+artifact_uri: file:///C:/Users/vivek%20gupta/Desktop/Kidney_Disease_CLassification/mlruns/0/6eaa04f216184f398f40aabb89b5e626/artifacts
+end_time: 1754355205134
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 6eaa04f216184f398f40aabb89b5e626
+run_name: rogue-shad-524
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1754355189826
+status: 3
+tags: []
+user_id: vivek gupta

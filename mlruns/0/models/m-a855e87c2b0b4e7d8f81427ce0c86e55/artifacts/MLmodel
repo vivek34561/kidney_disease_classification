@@ -1,0 +1,20 @@
+artifact_path: file:///C:/Users/vivek%20gupta/Desktop/Kidney_Disease_CLassification/mlruns/0/models/m-a855e87c2b0b4e7d8f81427ce0c86e55/artifacts
+flavors:
+  keras:
+    data: data
+    keras_backend: tensorflow
+    keras_version: 3.11.1
+    save_exported_model: false
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.keras
+    python_version: 3.13.5
+mlflow_version: 3.1.4
+model_id: m-a855e87c2b0b4e7d8f81427ce0c86e55
+model_size_bytes: 59143500
+model_uuid: m-a855e87c2b0b4e7d8f81427ce0c86e55
+prompts: null
+run_id: 6eaa04f216184f398f40aabb89b5e626
+utc_time_created: '2025-08-05 00:53:10.026021'

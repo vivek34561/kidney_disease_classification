@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/vivek%20gupta/Desktop/Kidney_Disease_CLassification/mlruns/0/c16c1ec4765d4fdaa8e4bb1044adb934/artifacts
+end_time: 1754377181981
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: c16c1ec4765d4fdaa8e4bb1044adb934
+run_name: monumental-vole-41
+run_uuid: c16c1ec4765d4fdaa8e4bb1044adb934
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1754377169767
+status: 4
+tags: []
+user_id: vivek gupta

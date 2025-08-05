@@ -1,21 +1,21 @@
-tensorflow
+tensorflow==2.12.0
 pandas 
 dvc
-mlflow
+mlflow==2.2.2
 notebook
 numpy
 matplotlib
 seaborn
-python-box
+python-box==6.0.2
 pyYAML
 tqdm
-ensure
+ensure==1.0.2
 joblib
 types-PyYAML
 scipy
 Flask
 Flask-Cors
 gdown
+setuptools==65.5.0
+python-dotenv
 # -e .
-dvc
-ipykernel

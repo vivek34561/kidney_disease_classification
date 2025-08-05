@@ -1,0 +1,14 @@
+artifact_uri: file:///C:/Users/vivek%20gupta/Desktop/Kidney_Disease_CLassification/mlruns/0/1ffec5ac7ec84e03a9d522f0362a1264/artifacts
+end_time: 1754356040244
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 1ffec5ac7ec84e03a9d522f0362a1264
+run_name: magnificent-colt-727
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1754356031749
+status: 3
+tags: []
+user_id: vivek gupta
