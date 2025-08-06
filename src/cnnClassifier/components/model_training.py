@@ -60,7 +60,7 @@ class Training:
             shuffle=True,
             **dataflow_kwargs
         )
-
+        print("Class Indices:", self.train_generator.class_indices)
     
     @staticmethod
     def save_model(path: Path, model: tf.keras.Model):
