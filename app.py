@@ -47,4 +47,5 @@ def predictRoute():
         return render_template("index.html", prediction="Error occurred")
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=8080)
+    PORT = int(os.environ.get("PORT", 10000))  # default to 10000 if not provided
+    app.run(host="0.0.0.0", port=PORT)
