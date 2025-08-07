@@ -209,3 +209,5 @@ kidney_venv\*
 kidney_venv/*
 artifacts\*
 artifacts/*
+kidney_enviro/*
+kidney_enviro\*
