@@ -211,3 +211,5 @@ artifacts\*
 artifacts/*
 kidney_enviro/*
 kidney_enviro\*
+disease\*
+disease/*

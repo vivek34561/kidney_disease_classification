@@ -1,51 +1,46 @@
-from flask import Flask, request, jsonify, render_template
+import streamlit as st
 import os
-from flask_cors import CORS, cross_origin
-from cnnClassifier.utils.common import decodeImage
-from cnnClassifier.pipeline.prediction import PredictionPipeline
+import base64
+from src.cnnClassifier.utils.common import decodeImage
+from src.cnnClassifier.pipeline.prediction import PredictionPipeline
 
-# Set environment variables for locale
-os.putenv('LANG', 'en_US.UTF-8')
-os.putenv('LC_ALL', 'en_US.UTF-8')
+# Function to convert image to base64 string
+def encode_image(file_path):
+    with open(file_path, "rb") as f:
+        return base64.b64encode(f.read()).decode()
 
-# Initialize Flask app
-app = Flask(__name__)
-CORS(app)  # Enable CORS
+# App title
+st.title("Kidney Disease Classification")
 
-# Home route
-@app.route("/", methods=['GET'])
-@cross_origin()
-def home():
-    return render_template('index.html')
+# Sidebar options
+app_mode = st.sidebar.selectbox("Choose the mode", ["Predict", "Train"])
 
+if app_mode == "Predict":
+    st.header("Upload an Image for Prediction")
 
-# Route for training the model
-@app.route("/train", methods=['GET', 'POST'])
-@cross_origin()
-def trainRoute():
-    os.system("python main.py")
-    return "Training done successfully!"
+    uploaded_file = st.file_uploader("Choose an image file", type=["jpg", "jpeg", "png"])
 
+    if uploaded_file is not None:
+        # Save the uploaded file
+        file_path = "inputImage.jpg"
+        with open(file_path, "wb") as f:
+            f.write(uploaded_file.read())
 
-# Route for making predictions
-@app.route("/predict", methods=['POST'])
-@cross_origin()
-def predictRoute():
-    try:
-        image = request.json['image']
-        filename = "inputImage.jpg"
-        decodeImage(image, filename)
+        # Encode the image and decode it back using existing utility
+        encoded_image = encode_image(file_path)
+        decodeImage(encoded_image, file_path)
 
-        # Load the model when needed
-        prediction_pipeline = PredictionPipeline(filename)
+        # Run prediction pipeline
+        prediction_pipeline = PredictionPipeline(file_path)
         result = prediction_pipeline.predict()
 
-        return jsonify(result)
+        st.image(file_path, caption="Uploaded Image", use_column_width=True)
+        st.subheader("Prediction:")
+        st.write(result)
 
-    except Exception as e:
-        print(f"❌ Error during prediction: {e}", flush=True)
-        return render_template("index.html", prediction="Error occurred")
+elif app_mode == "Train":
+    st.header("Train the Model")
 
-if __name__ == "__main__":
-    PORT = int(os.environ.get("PORT", 10000))  # default to 10000 if not provided
-    app.run(host="0.0.0.0", port=PORT)
+    if st.button("Start Training"):
+        os.system("python main.py")
+        st.success("✅ Training completed successfully!")
