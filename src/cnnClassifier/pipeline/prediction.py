@@ -23,4 +23,5 @@ class PredictionPipeline:
 
         prediction = "Tumor" if result == 1 else "Normal"
 
-        return [{"image": prediction}]
+        # Return both prediction label and probabilities (flattened)
+        return [{"image": prediction, "probabilities": preds[0].tolist()}]

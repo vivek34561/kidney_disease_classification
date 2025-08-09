@@ -10,7 +10,7 @@ def encode_image(file_path):
         return base64.b64encode(f.read()).decode()
 
 # App title
-st.title("Kidney Disease Classification")
+st.title("🫘Kidney Disease Classification")
 
 # Sidebar options
 app_mode = st.sidebar.selectbox("Choose the mode", ["Predict", "Train"])
@@ -26,7 +26,7 @@ if app_mode == "Predict":
         with open(file_path, "wb") as f:
             f.write(uploaded_file.read())
 
-        # Encode the image and decode it back using existing utility
+        # Encode and decode image
         encoded_image = encode_image(file_path)
         decodeImage(encoded_image, file_path)
 
@@ -36,11 +36,10 @@ if app_mode == "Predict":
 
         st.image(file_path, caption="Uploaded Image", use_column_width=True)
         st.subheader("Prediction:")
-        st.write(result)
+        st.write(result[0]["image"])
 
-elif app_mode == "Train":
-    st.header("Train the Model")
-
-    if st.button("Start Training"):
-        os.system("python main.py")
-        st.success("✅ Training completed successfully!")
+        st.subheader("Prediction Probabilities:")
+        # Assuming binary classification [Normal, Tumor], show nicely:
+        probs = result[0]["probabilities"]
+        st.write(f"Normal: {probs[0]:.4f}")
+        st.write(f"Tumor: {probs[1]:.4f}")
