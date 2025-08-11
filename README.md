@@ -1,6 +1,9 @@
 # Kidney-Disease-Classification-MLflow-DVC
 
-[**Live App Demo**](https://ajcdkkwddbgygkkooyffjj.streamlit.app/)
+## 🌐 Live App
+
+🔗 [Access the App](https://ajcdkkwddbgygkkooyffjj.streamlit.app/)
+
 
 ## Workflows
 
